@@ -6,7 +6,7 @@ In the info folder I will be adding any additional information in regards to thi
 
 ---
 
-10/01 11am - Trello 2
+10/01 12pm - Trello 2
 
 After speaking with Joe, he suggested that I wait until week 7 to completed adding images, but I can focus on it as a stretch goal. For now, I'll ignore the first page of the layout concept and make it around page 2.
 
@@ -21,3 +21,13 @@ As part of attempting to optimise the website, I have added multiple image sizes
 Taking a break from front end, I setup my database. I've also now created my seed file and server file without issue until now. Currently I'm running into an error when attempting to run the server with a module not being found. I've tried individually reinstalled express, cors, pg and dotenv but that doesn't seem to be the issue.
 
 I have just figured out that i was in the wrong root which was creating the issue. Now I just need to figure out how to properly connect my server and database.
+
+---
+
+10/01 3pm - Trello 3
+
+I have setup a command to show me the rows from my table in the server in a console log, but it's not coming through. Attempting to get it through postman isn't working either.
+
+I believe the issue was that i forgot to set the server to await a response from the database. I can connect and receive data from the database, now I'm just figuring out how to add information. I attempted to basically copy Manny's walking skeleton example, but that doesn't seem to be doing anything.
+
+After googling some methods and trying to same code again, it seems to have just worked and sent the data. I'm not quite sure why, but I'm not complaining. What may have been the issue is potentially using the wrong route when posting on postman, but I'm sure I checked that.
