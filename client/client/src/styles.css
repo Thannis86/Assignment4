@@ -1,0 +1,65 @@
+body {
+  display: grid;
+  grid-template-columns: 10% 10% 60% 10% 10%;
+  grid-template-rows: 10% 10% 60% 10% 10%;
+  height: 100%;
+  width: 100%;
+}
+
+#mainForm {
+  grid-area: 3 / 3 /4/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (min-width: 2560px) and (max-width: 3840px) and (orientation: landscape) {
+  body {
+    width: 3840px;
+    height: 2160px;
+    background-image: URL("./images/background4k.png");
+  }
+}
+
+@media all and (min-width: 1920px) and (max-width: 2560px) and (orientation: landscape) {
+  body {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1920px) and (orientation: landscape) {
+  body {
+    height: 100%;
+    width: 100%;
+    background-image: URL("./images/background2k.png");
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px) and (orientation: landscape) {
+  body {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  body {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) and (orientation: landscape) {
+  body {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 480px) and (orientation: landscape) {
+  body {
+    height: 100%;
+    width: 100%;
+  }
+}

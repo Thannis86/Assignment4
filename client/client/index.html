@@ -1,13 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Document</title>
+    <script src="./src/"></script>
+    <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <form action="form" id="mainForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="Your Name" />
+      <label for="email">Your Email</label>
+      <input type="email" name="Your Email" id="email" />
+      <label for="phoneNumber">Your Phone Number</label>
+      <input type="tel" name="Your Phone Number" id="phoneNumber" />
+      <label for="addWords">Words or Comments for the Bride and Groom</label>
+      <input
+        type="text"
+        name="Words or Comments for the Bride and Groom"
+        id="addWords"
+      />
+      <label for="images">Pictures</label>
+      TBD
+    </form>
   </body>
 </html>
