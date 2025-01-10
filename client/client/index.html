@@ -4,25 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./src/"></script>
+    <script type="module" src="./src/app.js" defer></script>
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
-    <form action="form" id="mainForm">
+    <form id="mainForm">
       <label for="name">Your Name</label>
-      <input type="text" id="name" name="Your Name" />
+      <input type="text" name="name" id="name" />
       <label for="email">Your Email</label>
-      <input type="email" name="Your Email" id="email" />
+      <input type="email" name="email" id="email" />
       <label for="phoneNumber">Your Phone Number</label>
-      <input type="tel" name="Your Phone Number" id="phoneNumber" />
+      <input type="tel" name="phoneNumber" id="phoneNumber" />
       <label for="addWords">Words or Comments for the Bride and Groom</label>
-      <input
-        type="text"
-        name="Words or Comments for the Bride and Groom"
-        id="addWords"
-      />
-      <label for="images">Pictures</label>
-      TBD
+      <input type="text" name="addWords" id="addWords" />
+      <!-- <label for="images">Pictures</label>
+      TBD -->
+      <button type="submit">Submit</button>
     </form>
   </body>
 </html>

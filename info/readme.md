@@ -24,10 +24,18 @@ I have just figured out that i was in the wrong root which was creating the issu
 
 ---
 
-10/01 3pm - Trello 3
+10/01 2pm
 
 I have setup a command to show me the rows from my table in the server in a console log, but it's not coming through. Attempting to get it through postman isn't working either.
 
 I believe the issue was that i forgot to set the server to await a response from the database. I can connect and receive data from the database, now I'm just figuring out how to add information. I attempted to basically copy Manny's walking skeleton example, but that doesn't seem to be doing anything.
 
 After googling some methods and trying to same code again, it seems to have just worked and sent the data. I'm not quite sure why, but I'm not complaining. What may have been the issue is potentially using the wrong route when posting on postman, but I'm sure I checked that.
+
+---
+
+10/01 3pm
+
+Taking a break from that whole mess, I decided to tackle getting render setup. Having the initial issue where I forgot i had double foldered the client, i got everything running fairly smoothly. Now I just need to link the client and the server.
+
+When attempting to prevent the default form behaviour, it working properly and the entire javascript file was malfunctioning. Eventually with the help of Craig, we figured out that part of what was causing it was not actually using for the function using an event listener. However, there were still numerous issues and errors when submitting, one of which saying I couldn't use the event listener. At some point, it just started working and continued working, so I still don't understand what caused the issue.

@@ -31,13 +31,15 @@ app.get("/guestbook", async (req, res) => {
   await console.log(query.rows);
 });
 
-app.post("/new-data", async (req, res) => {
-  const data = req.body.formValues;
-  const query = await db.query(
-    `INSERT INTO guestbook (name, email, phone, words, images)
+function send() {
+  app.post("/new-data", async (req, res) => {
+    const data = req.body.formValues;
+    const query = await db.query(
+      `INSERT INTO guestbook (name, email, phone, words, images)
 VALUES(
 'Cameron', 'thannis86@gmail.com','07939937580','None','true')`
-  );
-  await res.json(query.rows);
-  await console.log(query.rows);
-});
+    );
+    await res.json(query.rows);
+    await console.log(query.rows);
+  });
+}
