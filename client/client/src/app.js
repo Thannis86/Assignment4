@@ -2,7 +2,7 @@ const mainForm = document.querySelector("#mainForm");
 const testBtn = document.querySelector("#test");
 const mainDiv = document.getElementById("mainDiv");
 
-const url = "http://localhost:8080/";
+const url = "https://assignment4-z1bi.onrender.com:/";
 
 function handleSubmitMessageForm(event) {
   event.preventDefault();
@@ -23,13 +23,16 @@ mainForm.addEventListener("submit", async (event) => {
   };
 
   // Send data to the server
-  const response = await fetch("http://localhost:8080/submit-data", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
+  const response = await fetch(
+    "https://assignment4-z1bi.onrender.com:/submit-data",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }
+  );
 
   // Handle the server response
   const result = await response.json();
@@ -53,27 +56,6 @@ viewForm.addEventListener("click", function () {
   mainDiv.style.display = "none";
 });
 
-// async function fetchData() {
-//   const response = await fetch("http://localhost:8080/guestbook");
-//   const data = await response.json();
-//   console.log(data);
-//   const o = document.createElement("div"),
-//     r = document.createElement("h2"),
-//     e = document.createElement("h3"),
-//     t = document.createElement("p"),
-//     s = document.createElement("img");
-//   (o.className = "box"),
-//     (r.textContent = `Name: ${data.name}`),
-//     (e.textContent = `Email & Phone Number: ${data.email}, ${data.phone}`),
-//     (t.textContent = `Words From The Guest: ${data.words}`),
-//     (s.src = "./garland.png"),
-//     (s.alt = "an award logo"),
-//     o.appendChild(s),
-//     o.appendChild(r),
-//     o.appendChild(e),
-//     o.appendChild(t);
-// }
-
 console.log("hello");
 
 // Getting data from DB
@@ -82,25 +64,16 @@ const text = document.getElementById("test");
 const aTest = document.querySelector("#aTest");
 
 fetchData();
-// async function fetchData() {
-//   const response = await fetch("http://localhost:8080/guestbook");
-//   const data = await response.json();
-//   console.log(data);
-//   text.textContent = await data[0].name;
-//   const t = document.createElement("p");
-//   const tTest = document.createTextNode("testing");
-//   document.addEventListener("DOMContentLoaded", function () {
-//     t.appendchild(tTest);
-//   });
-// }
 
 async function fetchData() {
-  const response = await fetch("http://localhost:8080/guestbook");
+  const response = await fetch(
+    "https://assignment4-z1bi.onrender.com/guestbook"
+  );
   const data = await response.json();
   console.log(data);
-  text.textContent = await data[0].name;
   data.forEach((entry) => {
     const listBox = document.createElement("div");
+    listBox.setAttribute("id", "box");
     mainDiv.appendChild(listBox);
     const listName = document.createElement("h1");
     listName.textContent = `Name: ${entry.name}`;
@@ -108,11 +81,14 @@ async function fetchData() {
     listEmail.textContent = `Email: ${entry.email}`;
     const listPhone = document.createElement("p2");
     listPhone.textContent = `Phone Number: ${entry.phone}`;
+    const extraWords = document.createElement("h3");
+    extraWords.textContent = `Words For the Bride and Groom:`;
     const listWords = document.createElement("h2");
-    listWords.textContent = `Words For The Bride and Groom: ${entry.words}`;
+    listWords.textContent = entry.words;
     listBox.appendChild(listName);
     listBox.appendChild(listEmail);
     listBox.appendChild(listPhone);
+    listBox.appendChild(extraWords);
     listBox.appendChild(listWords);
   });
 }

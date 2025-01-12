@@ -79,3 +79,15 @@ What got me before stumped me for a little bit and there was a lot of experiment
 I used the above linked website to try and figure out how to append which is what got me before. This time however, I managed to figure it out. Using a combination of this and Manny's example I figured out how to list each of the database entries using 'forEach' (Which from what I can gather, will execute the function for each entry in the array). Then the part that stumped me again was that I was appending into the maindiv on each line, so it wasn't adding them to the created div like I thought it would automatically. I eventually figured out instead of appending into the maindiv, I needed to append into created div, which as a guess I just appended into listBox and it thankfully worked.
 
 ---
+
+12/01 8pm
+
+https://stackoverflow.com/questions/9422974/createelement-with-id
+
+Adding stlyes was pretty easy. The only challenge was adding an ID to be able differentiate the created divs from the existing divs, which I did using the above help. I ended up adding another append to for the 'words' to make it look a little nicer.
+
+In this push, I'm also going to change over the client app fetch URL to the render server, so we'll see how this goes. I wish I had time to make the form itself look a little nicer and reorganise the client JS, but it works and that's the important thing.
+
+After updating the URLS to the render server, everything appears to work.
+
+I'm happy enough with what I did for my assignment this week with how much I struggled with data information. I still don't get some of it, but I can catch up as I continue to work on new projects and assignments
