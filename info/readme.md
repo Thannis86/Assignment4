@@ -57,3 +57,11 @@ Yesterday i had a busy day and was unable to work fully on this. However, in the
 However, this morning while attempting to get the form data from the client to the server, I somehow messed up my code and couldn't figure out what I was doing wrong. And in my stupidity I forgot to push the working code the evening before so I couldn't refer back to that version. I reset the password for the database, rewatched the tutorials, asked chatgpt again and nothing worked. In the end I rewrote the script, env file and reset the database password again and now it works.
 
 The current issues I'm having is submitting the form information from the client to the database. Initially I tried to use the script I used from the server file to create rows and send that to the server to be submitted, but even changing the content type (Using the headers guide), I couldn't figure out how to do it. Currently I'm working on sending the form over as an object, which is successful in itself, but when attempting to change the previously used code to send the it's coming up with an error. For some reason when doing data.name, it's trying to send the data to a collumn with the name of the name. I'm not sure what's causing the issue, but its where I'm currently at.
+
+---
+
+12/01 5pm
+
+This one was a little annoying, but not as bad. The biggest issue I had with trying to send the information from the form to the database was having the object split at the server to add it to the SQL and send it to the database. I kept trying to treat it like I would a normal object, but i think due to the `` in the SQL lines, it wasn't properly using it. As mentioned previously a big repeat issue was that it was trying to send the row item as a column name.
+
+In the end, I referred back to one of my previous attempts using the videos and figured out how to properly use what's in the server file lines 53 and 55 (not sure on what that particular thing is called). From what I can gather, using '$1, $2' etc, enables me to later fill in the values when using it in a query or function, eg, 'await db.query(query, [name, email, phone, words]);' which covers the 4 values on line 53.

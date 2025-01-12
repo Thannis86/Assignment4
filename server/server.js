@@ -28,32 +28,10 @@ export const db = new pg.Pool({
   connectionString: dbConnectionString,
 });
 
-// Submitted Data from client
-
-// app.post("/submit-data", async (req, res) => {
-//   const data = req.body;
-//   console.log("data received", data);
-//   res.send({ message: "Data Received", receivedData: data });
-//   console.log(data.name)
-// });
-
 // Sending DB rows from DB to client
 
 app.get("/guestbook", async (req, res) => {
   const query = await db.query(`SELECT * FROM guestbook`);
-  await res.json(query.rows);
-  await console.log(query.rows);
-});
-
-// Sending rows from server to DB
-
-app.post("/submit-data", async (req, res) => {
-  const data = req.body.formValues;
-  const query = await db.query(
-    `INSERT INTO guestbook (name, email, phone, words)
-VALUES(
-'Cameron', 'thannis86@gmail.com','079712345','Yes')`
-  );
   await res.json(query.rows);
   await console.log(query.rows);
 });
@@ -64,23 +42,20 @@ app.get("/", (req, res) => {
   res.json({ message: "This is the root route" });
 });
 
-// app.post("/add-guest", async (req, res) => {
-//   const { name, email, phone, words } = req.body;
+// Submitted Data from client
 
-//   const query = `
-//     INSERT INTO guestbook (name, email, phone, words)
-//     VALUES ($1, $2, $3, $4)
-//   `;
-//   const values = [name, email, phone, words];
+app.post("/submit-data", async (req, res) => {
+  const data = req.body;
+  console.log("Data received:", data);
+  const { name, email, phone, words } = data;
+  const query = `
+      INSERT INTO guestbook (name, email, phone, words)
+      VALUES ($1, $2, $3, $4)
+    `;
+  await db.query(query, [name, email, phone, words]);
+});
 
-//   try {
-//     await db.query(query, values);
-//     res.status(200).send("Guest added successfully!");
-//   } catch (err) {
-//     console.error("Error inserting data:", err);
-//     res.status(500).send("An error occurred while inserting data");
-//   }
-// });
+// Test DB connection
 
 db.connect()
   .then(() => console.log("Connected to DB"))

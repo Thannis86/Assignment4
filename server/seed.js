@@ -6,6 +6,4 @@ db.query(`CREATE TABLE IF NOT EXISTS guestbook (
     email VARCHAR(100),
     phone INT,
     words VARCHAR(1000),
-    images BOOL,
-
 )`);
