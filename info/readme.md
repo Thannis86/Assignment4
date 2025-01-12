@@ -42,6 +42,18 @@ When attempting to prevent the default form behaviour, it working properly and t
 
 ---
 
-11/01 9pm
+12/01 3pm
 
 https://www.youtube.com/watch?v=w3vs4a03y3I
+https://www.youtube.com/watch?v=mKmxc8TcWQ8&t=792s
+https://www.youtube.com/watch?v=w3vs4a03y3I&t=655s
+
+https://developer.mozilla.org/en-US/docs/Web/API/Headers
+
+This one is a wild ride.
+
+Yesterday i had a busy day and was unable to work fully on this. However, in the evening I worked on getting the database, server and client connected and after a few different youtube videos, some guidance from chatgpt on why my code wasn't working (Because the videos all wanted to use a variety of different things instead of what we've been learning, some are listed above), some healthy guesswork and some luck, I managed to get my server to send a new row to the database when I used postman to ping the server.
+
+However, this morning while attempting to get the form data from the client to the server, I somehow messed up my code and couldn't figure out what I was doing wrong. And in my stupidity I forgot to push the working code the evening before so I couldn't refer back to that version. I reset the password for the database, rewatched the tutorials, asked chatgpt again and nothing worked. In the end I rewrote the script, env file and reset the database password again and now it works.
+
+The current issues I'm having is submitting the form information from the client to the database. Initially I tried to use the script I used from the server file to create rows and send that to the server to be submitted, but even changing the content type (Using the headers guide), I couldn't figure out how to do it. Currently I'm working on sending the form over as an object, which is successful in itself, but when attempting to change the previously used code to send the it's coming up with an error. For some reason when doing data.name, it's trying to send the data to a collumn with the name of the name. I'm not sure what's causing the issue, but its where I'm currently at.
