@@ -39,3 +39,9 @@ After googling some methods and trying to same code again, it seems to have just
 Taking a break from that whole mess, I decided to tackle getting render setup. Having the initial issue where I forgot i had double foldered the client, i got everything running fairly smoothly. Now I just need to link the client and the server.
 
 When attempting to prevent the default form behaviour, it working properly and the entire javascript file was malfunctioning. Eventually with the help of Craig, we figured out that part of what was causing it was not actually using for the function using an event listener. However, there were still numerous issues and errors when submitting, one of which saying I couldn't use the event listener. At some point, it just started working and continued working, so I still don't understand what caused the issue.
+
+---
+
+11/01 9pm
+
+https://www.youtube.com/watch?v=w3vs4a03y3I
