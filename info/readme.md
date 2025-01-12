@@ -65,3 +65,17 @@ The current issues I'm having is submitting the form information from the client
 This one was a little annoying, but not as bad. The biggest issue I had with trying to send the information from the form to the database was having the object split at the server to add it to the SQL and send it to the database. I kept trying to treat it like I would a normal object, but i think due to the `` in the SQL lines, it wasn't properly using it. As mentioned previously a big repeat issue was that it was trying to send the row item as a column name.
 
 In the end, I referred back to one of my previous attempts using the videos and figured out how to properly use what's in the server file lines 53 and 55 (not sure on what that particular thing is called). From what I can gather, using '$1, $2' etc, enables me to later fill in the values when using it in a query or function, eg, 'await db.query(query, [name, email, phone, words]);' which covers the 4 values on line 53.
+
+Next ti work on is the client showing the database in a gallery style. In my week 2 assignment, I struggled with figuring out how to make the gallery and made it super manually. In this case, I don't have the same option, so I'll have to figure it out.
+
+---
+
+12/01 7pm
+
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_node_appendchild
+
+What got me before stumped me for a little bit and there was a lot of experiment with buttons and such. I ended up adding some buttons to hide the form and the gallery so I could focus on one thing without the other hanging in the background.
+
+I used the above linked website to try and figure out how to append which is what got me before. This time however, I managed to figure it out. Using a combination of this and Manny's example I figured out how to list each of the database entries using 'forEach' (Which from what I can gather, will execute the function for each entry in the array). Then the part that stumped me again was that I was appending into the maindiv on each line, so it wasn't adding them to the created div like I thought it would automatically. I eventually figured out instead of appending into the maindiv, I needed to append into created div, which as a guess I just appended into listBox and it thankfully worked.
+
+---
